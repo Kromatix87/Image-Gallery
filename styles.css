@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+div.gs-gallery-outer-container {
+    width: 100%;
+    text-align: center;
+}
+
+div.gs-gallery-container {
+    width: 100%;
+    background-color: #999;
+    margin: auto;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: auto;
+    line-height: 0px;
+    padding: 5px;
+    font-size: 0;
+}
+
+div.gs-gallery-img-container {
+    width: 20%;
+    box-sizing: border-box;
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+}
+
+div.gs-gallery-img-container div.gs-gallery-img {
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    top: 5px;
+    bottom: 5px;
+    background-image: url('http://placehold.it/100x100');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+}
+
+div.gs-gallery-img-container div.gs-gallery-img-title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    bottom: 0;
+    background-image: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 5px 5px;
+    color: white;
+    font-size: 16px;
+    overflow: hidden;
+    padding: 0;
+}
+
+div.gs-gallery-img-container div.gs-gallery-img-title p {
+    line-height: 24px;
+    margin: 15px;
+    cursor: default;
+}
+
+div.gs-gallery-img-container div.gs-gallery-img-caption,
+div.gs-gallery-img-caption p {
+    display: none;
+}
+
+div.gs-gallery-img-container:before {
+    content: '';
+    display: block;
+    padding-top: 80%;
+}
+
+div.gs-gallery-modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(100, 100, 100, 0.4);
+}
+
+div.gs-gallery-modal {
+    overflow: hidden;
+    width: 80%;
+    height: 80%;
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px 15px 15px 15px;
+    margin: 0;
+    font-size: 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: center;
+}
+
+div.gs-gallery-modal-title,
+div.gs-gallery-modal-caption {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    line-height: 24px;
+    font-size: 16px;
+    display: block;
+}
+
+div.gs-gallery-modal-prev,
+div.gs-gallery-modal-position,
+div.gs-gallery-modal-next {
+    line-height: 24px;
+    font-size: 16px;
+    display: block;
+}
+
+div.gs-gallery-modal-title,
+div.gs-gallery-modal-position {
+    font-weight: bold;
+}
+
+div.gs-gallery-modal-img {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+div.gs-gallery-modal-img>img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+}
+
+div.gs-gallery-modal-close {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 20px;
+    padding: 10px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: grey;
+    cursor: default;
+}
+
+div.gs-gallery-modal-close:hover {
+    color: black;
+    cursor: default;
+}
+
+div.gs-gallery-modal-prev,
+div.gs-gallery-modal-next {
+    position: absolute;
+    display: block;
+    background-color: grey;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border-radius: 25px;
+}
+
+div.gs-gallery-modal-prev {
+    left: 30px;
+}
+
+div.gs-gallery-modal-next {
+    right: 30px;
+}
+
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+div.gs-gallery-modal-inner {
+    width: 100%;
+    height: 100%;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@media screen and (max-width: 960px) {
+    div.gs-gallery-modal {
+        width: 90%;
+        height: 90%;
+    }
+    div.gs-gallery-img-container {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    div.gs-gallery-img-container div.gs-gallery-img-title {
+        display: none;
+    }
+    div.gs-gallery-img-container {
+        width: 33.3%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    div.gs-gallery-img-container {
+        width: 50%;
+    }
+}
