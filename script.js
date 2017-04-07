@@ -6,13 +6,17 @@ jQuery(document).ready(function () {
         $("div.cbs-gallery-img-container").hover(
             function () {
                 $(this).find("div.cbs-gallery-img-title").animate({
-                    top: "30%"
-                }, 200);
+                    top: "0%"
+                }, 200, function () {
+                    $(this).find("p").css("white-space", "normal");
+                });
             },
             function () {
                 $(this).find("div.cbs-gallery-img-title").animate({
-                    top: "100%"
-                }, 200);
+                    top: "65%"
+                }, 200, function () {
+                    $(this).find("p").css("white-space", "nowrap");
+                });
             }
         );
 
@@ -25,7 +29,7 @@ jQuery(document).ready(function () {
             '<div class="cbs-gallery-modal-inner">' +
             '<div class="cbs-gallery-modal-title"></div>' +
             '<div class="cbs-gallery-modal-img" style="">' +
-            '<img src="http://placehold.it/100x50">' +
+            '<img src="">' +
             '</div>' +
             '<div class="cbs-gallery-modal-caption"></div>' +
             '<div class="cbs-gallery-modal-position"></div>' +
@@ -43,7 +47,7 @@ jQuery(document).ready(function () {
                 "position": $(imgContainer).attr("position")
             });
             $(thisGalleryModalHtml).find("div.cbs-gallery-modal-title").text($(imgContainer).find("div.cbs-gallery-img-title > p").text());
-            $(thisGalleryModalHtml).find("div.cbs-gallery-modal-img > img").attr("src", $(imgContainer).find("div.cbs-gallery-img").css("background-image").replace('url("', '').replace('")', ''));
+            $(thisGalleryModalHtml).find("div.cbs-gallery-modal-img > img").attr("src", $(imgContainer).attr("imgURL"));
             $(thisGalleryModalHtml).find("div.cbs-gallery-modal-caption").text($(imgContainer).find("div.cbs-gallery-img-caption > p").text());
             $(thisGalleryModalHtml).find("div.cbs-gallery-modal-position").text($(imgContainer).attr("imgDispNumber"));
 
